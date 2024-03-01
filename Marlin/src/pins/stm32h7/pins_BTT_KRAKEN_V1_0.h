@@ -56,11 +56,11 @@
 #define X_DIAG_PIN                          PC15  // MIN1
 #define Y_DIAG_PIN                          PF0   // MIN2
 #define Z_DIAG_PIN                          PF1   // MIN3
-#define E0_DIAG_PIN                         PF2   // MIN4
-#define E1_DIAG_PIN                         PF3   // MIN5
-#define E2_DIAG_PIN                         PF4   // MIN6
-#define E3_DIAG_PIN                         PF10  // MIN7
-#define E4_DIAG_PIN                         PC0   // MIN8
+#define Z2_DIAG_PIN                         PF2   // MIN4
+#define I_DIAG_PIN                         PF3   // MIN5
+#define J_DIAG_PIN                         PF4   // MIN6
+#define K_DIAG_PIN                         PF10  // MIN7
+#define U_DIAG_PIN                         PC0   // MIN8
 
 //
 // Limit Switches
@@ -68,16 +68,16 @@
 #ifdef X_STALL_SENSITIVITY
   #define X_STOP_PIN                  X_DIAG_PIN
   #if X_HOME_TO_MIN
-    #define X_MAX_PIN                E0_DIAG_PIN  // MIN4
+    #define X_MAX_PIN                Z2_DIAG_PIN  // MIN4
   #else
-    #define X_MIN_PIN                E0_DIAG_PIN  // MIN4
+    #define X_MIN_PIN                Z2_DIAG_PIN  // MIN4
   #endif
 #elif NEEDS_X_MINMAX
   #ifndef X_MIN_PIN
     #define X_MIN_PIN                 X_DIAG_PIN  // MIN1
   #endif
   #ifndef X_MAX_PIN
-    #define X_MAX_PIN                E0_DIAG_PIN  // MIN4
+    #define X_MAX_PIN                Z2_DIAG_PIN  // MIN4
   #endif
 #else
   #define X_STOP_PIN                  X_DIAG_PIN  // MIN1
@@ -86,16 +86,16 @@
 #ifdef Y_STALL_SENSITIVITY
   #define Y_STOP_PIN                  Y_DIAG_PIN
   #if Y_HOME_TO_MIN
-    #define Y_MAX_PIN                E1_DIAG_PIN  // MIN5
+    #define Y_MAX_PIN                I_DIAG_PIN  // MIN5
   #else
-    #define Y_MIN_PIN                E1_DIAG_PIN  // MIN5
+    #define Y_MIN_PIN                I_DIAG_PIN  // MIN5
   #endif
 #elif NEEDS_Y_MINMAX
   #ifndef Y_MIN_PIN
     #define Y_MIN_PIN                 Y_DIAG_PIN  // MIN2
   #endif
   #ifndef Y_MAX_PIN
-    #define Y_MAX_PIN                E1_DIAG_PIN  // MIN5
+    #define Y_MAX_PIN                I_DIAG_PIN  // MIN5
   #endif
 #else
   #define Y_STOP_PIN                  Y_DIAG_PIN  // MIN2
@@ -104,16 +104,16 @@
 #ifdef Z_STALL_SENSITIVITY
   #define Z_STOP_PIN                  Z_DIAG_PIN
   #if Z_HOME_TO_MIN
-    #define Z_MAX_PIN                E2_DIAG_PIN  // MIN6
+    #define Z_MAX_PIN                J_DIAG_PIN  // MIN6
   #else
-    #define Z_MIN_PIN                E2_DIAG_PIN  // MIN6
+    #define Z_MIN_PIN                J_DIAG_PIN  // MIN6
   #endif
 #elif NEEDS_Z_MINMAX
   #ifndef Z_MIN_PIN
     #define Z_MIN_PIN                 Z_DIAG_PIN  // MIN3
   #endif
   #ifndef Z_MAX_PIN
-    #define Z_MAX_PIN                E2_DIAG_PIN  // MIN6
+    #define Z_MAX_PIN                J_DIAG_PIN  // MIN6
   #endif
 #else
   #define Z_STOP_PIN                  Z_DIAG_PIN  // MIN3
@@ -137,11 +137,11 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN               E0_DIAG_PIN  // MIN4
-#define FIL_RUNOUT2_PIN              E1_DIAG_PIN  // MIN5
-#define FIL_RUNOUT3_PIN              E2_DIAG_PIN  // MIN6
-#define FIL_RUNOUT4_PIN              E3_DIAG_PIN  // MIN7
-#define FIL_RUNOUT5_PIN              E4_DIAG_PIN  // MIN8
+#define FIL_RUNOUT_PIN               Z2_DIAG_PIN  // MIN4
+#define FIL_RUNOUT2_PIN              I_DIAG_PIN  // MIN5
+#define FIL_RUNOUT3_PIN              J_DIAG_PIN  // MIN6
+#define FIL_RUNOUT4_PIN              K_DIAG_PIN  // MIN7
+#define FIL_RUNOUT5_PIN              U_DIAG_PIN  // MIN8
 
 //
 // Steppers
@@ -167,39 +167,39 @@
   #define Z_CS_PIN                          PD4
 #endif
 
-#define E0_STEP_PIN                         PB9   // S4 (Motor 4)
-#define E0_DIR_PIN                          PB8
-#define E0_ENABLE_PIN                       PB7
-#ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PD3
+#define Z2_STEP_PIN                         PB9   // S4 (Motor 4)
+#define Z2_DIR_PIN                          PB8
+#define Z2_ENABLE_PIN                       PB7
+#ifndef Z2_CS_PIN
+  #define Z2_CS_PIN                         PD3
 #endif
 
-#define E1_STEP_PIN                         PG9   // S5 (Motor 5)
-#define E1_DIR_PIN                          PG10
-#define E1_ENABLE_PIN                       PG13
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PD2
+#define I_STEP_PIN                         PG9   // S5 (Motor 5)
+#define I_DIR_PIN                          PG10
+#define I_ENABLE_PIN                       PG13
+#ifndef I_CS_PIN
+  #define I_CS_PIN                         PD2
 #endif
 
-#define E2_STEP_PIN                         PG11  // S6 (Motor 6)
-#define E2_DIR_PIN                          PD7
-#define E2_ENABLE_PIN                       PG12
-#ifndef E2_CS_PIN
-  #define E2_CS_PIN                         PA15
+#define J_STEP_PIN                         PG11  // S6 (Motor 6)
+#define J_DIR_PIN                          PD7
+#define J_ENABLE_PIN                       PG12
+#ifndef J_CS_PIN
+  #define J_CS_PIN                         PA15
 #endif
 
-#define E3_STEP_PIN                         PB4   // S7 (Motor 7)
-#define E3_DIR_PIN                          PB3
-#define E3_ENABLE_PIN                       PB5
-#ifndef E3_CS_PIN
-  #define E3_CS_PIN                         PA9
+#define K_STEP_PIN                         PB4   // S7 (Motor 7)
+#define K_DIR_PIN                          PB3
+#define K_ENABLE_PIN                       PB5
+#ifndef K_CS_PIN
+  #define K_CS_PIN                         PA9
 #endif
 
-#define E4_STEP_PIN                         PG15  // S8 (Motor 8)
-#define E4_DIR_PIN                          PB6
-#define E4_ENABLE_PIN                       PG14
-#ifndef E4_CS_PIN
-  #define E4_CS_PIN                         PA10
+#define U_STEP_PIN                         PG15  // S8 (Motor 8)
+#define U_DIR_PIN                          PB6
+#define U_ENABLE_PIN                       PG14
+#ifndef U_CS_PIN
+  #define U_CS_PIN                         PA10
 #endif
 
 //
@@ -230,28 +230,19 @@
   static_assert(Z_RSENSE == 0.022, "Z_RSENSE (S3 / Motor 3) must be 0.022 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
 #if NUM_Z_STEPPERS >= 2
-  static_assert(Z2_RSENSE == 0.075, "Z2_RSENSE (S5 / Motor 5) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
+  static_assert(Z2_RSENSE == 0.022, "Z2_RSENSE (S4 / Motor 4) must be 0.022 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
-#if NUM_Z_STEPPERS >= 3
-  static_assert(Z3_RSENSE == 0.075, "Z3_RSENSE (S6 / Motor 6) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
+#if HAS_I_AXIS
+  static_assert(I_RSENSE == 0.075, "I_RSENSE (S5 / Motor 5) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
-#if NUM_Z_STEPPERS >= 4
-  static_assert(Z4_RSENSE == 0.075, "Z4_RSENSE (S7 / Motor 7) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
+#if HAS_J_AXIS
+  static_assert(J_RSENSE == 0.075, "J_RSENSE (S6 / Motor 6) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
-#if EXTRUDERS >= 1
-  static_assert(E0_RSENSE == 0.022, "E0_RSENSE (S4 / Motor 4) must be 0.022 for BOARD_BTT_KRAKEN_V1_0.");
+#if HAS_K_AXIS
+  static_assert(K_RSENSE == 0.075, "K_RSENSE (S7 / Motor 7) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
-#if EXTRUDERS >= 2
-  static_assert(E1_RSENSE == 0.075, "E1_RSENSE (S5 / Motor 5) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
-#endif
-#if EXTRUDERS >= 3
-  static_assert(E2_RSENSE == 0.075, "E2_RSENSE (S6 / Motor 6) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
-#endif
-#if EXTRUDERS >= 4
-  static_assert(E3_RSENSE == 0.075, "E3_RSENSE (S7 / Motor 7) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
-#endif
-#if EXTRUDERS >= 5
-  static_assert(E4_RSENSE == 0.075, "E4_RSENSE (S8 / Motor 8) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
+#if HAS_U_AXIS
+  static_assert(U_RSENSE == 0.075, "U_RSENSE (S8 / Motor 8) must be 0.075 for BOARD_BTT_KRAKEN_V1_0.");
 #endif
 
 //
