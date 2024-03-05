@@ -273,10 +273,10 @@
 // Heaters / Fans
 //
 #define HEATER_BED_PIN                      PF5   // BED-OUT
-#define HEATER_0_PIN                        PF6   // HE0
-#define HEATER_1_PIN                        PF7   // HE1
-#define HEATER_2_PIN                        PF9   // HE2
-#define HEATER_3_PIN                        PF8   // HE3
+// #define HEATER_0_PIN                        PF6   // HE0
+// #define HEATER_1_PIN                        PF7   // HE1
+// #define HEATER_2_PIN                        PF9   // HE2
+// #define HEATER_3_PIN                        PF8   // HE3
 
 #define FAN0_PIN                            PA0   // FAN0 (3 wire)
 #define FAN1_PIN                            PA1   // FAN1 (3 wire)
@@ -286,6 +286,11 @@
 #define FAN5_PIN                            PA5   // FAN5 (3 wire)
 #define FAN6_PIN                            PA6   // FAN6 (4 wire)
 #define FAN7_PIN                            PE8   // FAN7 (4 wire)
+
+#define FAN10_PIN                           PF6   // HE0, flyback diode protected used to drive inductive loads (e.g. pump or relay)
+#define FAN11_PIN                           PF7   // HE1, flyback diode protected used to drive inductive loads (e.g. pump or relay)
+#define FAN12_PIN                           PF9   // HE2, flyback diode protected used to drive inductive loads (e.g. pump or relay)
+#define FAN13_PIN                           PF8   // HE3, flyback diode protected used to drive inductive loads (e.g. pump or relay)
 
 #ifndef E0_FAN_TACHO_PIN
   //#define E0_FAN_TACHO_PIN                PC1   // FAN6
